@@ -1,0 +1,678 @@
+/* BluePitch Clone CSS (Dark Theme) */
+:root {
+    --primary-color: #00a8ff; /* Vibrant blue */
+    --primary-hover: #0088cc;
+    --bg-light: #111111; /* Dark background */
+    --bg-white: #000000; /* Pure black for main backgrounds */
+    --text-dark: #ffffff; /* Main text is white */
+    --text-gray: #aaaaaa; /* Muted text is light gray */
+    --border-light: #333333; /* Dark gray borders */
+    --red-alert: #ff4757; /* Bright red for alerts */
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-white);
+    color: var(--text-dark);
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+a {
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+/* =========================================
+   TOP BAR (Blue banner)
+   ========================================= */
+.top-bar {
+    background-color: var(--primary-color);
+    color: #000000;
+    text-align: center;
+    padding: 8px 0;
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* =========================================
+   MAIN HEADER
+   ========================================= */
+.main-header {
+    background-color: var(--bg-white);
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    flex-shrink: 0;
+}
+
+.search-container {
+    flex-grow: 1;
+    max-width: 600px;
+}
+
+.search-form {
+    display: flex;
+    position: relative;
+}
+
+.search-input {
+    width: 100%;
+    padding: 12px 20px;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    border: 2px solid var(--border-light);
+    border-radius: 30px;
+    font-size: 0.95rem;
+    outline: none;
+}
+
+.search-input:focus {
+    border-color: var(--primary-color);
+}
+
+.search-btn {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-dark);
+}
+
+.header-icons {
+    display: flex;
+    gap: 20px;
+    flex-shrink: 0;
+}
+
+.icon-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--text-gray);
+}
+
+.icon-link:hover {
+    color: var(--primary-color);
+}
+
+.cart-icon {
+    position: relative;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    background-color: var(--primary-color);
+    color: #000000;
+    font-size: 0.65rem;
+    font-weight: 900;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* =========================================
+   BOTTOM NAV
+   ========================================= */
+.bottom-nav {
+    background-color: var(--bg-white);
+    border-bottom: 3px solid var(--primary-color);
+}
+
+.bottom-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.bottom-nav a {
+    display: block;
+    padding: 15px 0;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.bottom-nav a:hover {
+    color: var(--primary-color);
+}
+
+/* =========================================
+   HERO / BANNER
+   ========================================= */
+.main-hero {
+    width: 100%;
+    background-color: #000;
+}
+
+.hero-item {
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.hero-item::before {
+    content: '';
+    position: absolute;
+    top:0; left:0; width:100%; height:100%;
+    background: linear-gradient(90deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.1) 100%);
+}
+
+.hero-content-box {
+    position: relative;
+    z-index: 2;
+    padding-left: 10%;
+    max-width: 600px;
+}
+
+.hero-content-box h2 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.hero-content-box h1 {
+    color: #fff;
+    font-size: 4rem;
+    line-height: 1;
+    margin: 0 0 15px 0;
+    font-weight: 900;
+}
+
+.hero-content-box p {
+    color: #ddd;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* =========================================
+   BUTTONS
+   ========================================= */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    font-weight: 800;
+    text-transform: uppercase;
+    border-radius: 3px;
+    cursor: pointer;
+    border: none;
+    font-size: 0.95rem;
+    transition: background 0.2s;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #000;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid var(--text-dark);
+    color: var(--text-dark);
+}
+
+.btn-secondary:hover {
+    background-color: var(--border-light);
+}
+
+/* =========================================
+   BRAND BAR
+   ========================================= */
+.brand-bar {
+    padding: 30px 0;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.brand-logos {
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #555;
+}
+
+/* =========================================
+   PRODUCT GRID
+   ========================================= */
+.product-section {
+    padding: 60px 15px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 30px;
+}
+
+.section-header h2 {
+    font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.view-all {
+    font-weight: 700;
+    text-decoration: underline;
+    color: var(--primary-color);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.product-card {
+    border: 1px solid var(--border-light);
+    border-radius: 5px;
+    padding: 15px;
+    position: relative;
+    background: var(--bg-light);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.product-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 5px 15px rgba(0, 168, 255, 0.1);
+}
+
+.product-image {
+    position: relative;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.product-image img {
+    max-width: 100%;
+}
+
+.badge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 4px 8px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: #fff;
+    border-radius: 3px;
+}
+
+.badge.new {
+    background-color: var(--primary-color);
+    color: #000;
+}
+
+.badge.discount {
+    background-color: var(--red-alert);
+}
+
+.product-info {
+    text-align: left;
+}
+
+.product-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+    color: var(--text-gray);
+}
+
+.product-price {
+    font-size: 1.2rem;
+    font-weight: 900;
+    margin: 0;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: var(--text-gray);
+    font-size: 0.9rem;
+    font-weight: normal;
+    margin-right: 5px;
+}
+
+/* =========================================
+   PROMO GRID
+   ========================================= */
+.promo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding-bottom: 60px;
+}
+
+.promo-box {
+    height: 300px;
+    background-color: #111;
+    display: flex;
+    align-items: center;
+    padding: 40px;
+    background-size: cover;
+    background-position: center;
+}
+
+.promo-1 {}
+.promo-2 {}
+
+.promo-content h3 {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 900;
+    margin: 0 0 20px 0;
+}
+
+/* =========================================
+   ENDORSEMENT BANNER
+   ========================================= */
+.endorsement-banner {
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    margin: 40px 0;
+}
+
+.endorsement-content {
+    max-width: 600px;
+    padding-left: 10%;
+}
+
+.endorsement-content h2 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+.endorsement-content p {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+/* =========================================
+   SOCIAL GRID
+   ========================================= */
+.social-section {
+    padding: 60px 0;
+    background-color: var(--bg-white);
+}
+
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+}
+
+.social-item {
+    position: relative;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.social-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 168, 255, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    font-weight: 800;
+    font-size: 1.1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.social-item:hover .social-overlay {
+    opacity: 1;
+}
+
+/* =========================================
+   USPs (Unique Selling Propositions)
+   ========================================= */
+.usps-section {
+    background-color: var(--bg-light);
+    padding: 40px 0;
+    border-top: 1px solid var(--border-light);
+}
+
+.usps-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    text-align: center;
+    gap: 20px;
+}
+
+.usp strong {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: var(--primary-color);
+}
+
+.usp p {
+    font-size: 0.8rem;
+    color: var(--text-gray);
+    margin: 5px 0 0 0;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+.site-footer {
+    background-color: #111111;
+    color: #ffffff;
+    border-top: 2px solid var(--primary-color);
+}
+
+.newsletter-section {
+    background-color: var(--primary-color);
+    color: #000000;
+    padding: 40px 0;
+}
+
+.newsletter-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.newsletter-text h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.newsletter-text p {
+    margin: 0;
+}
+
+.newsletter-form {
+    display: flex;
+}
+
+.newsletter-form input {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 3px 0 0 3px;
+    outline: none;
+    width: 300px;
+    background-color: #ffffff;
+    color: #000;
+}
+
+.newsletter-form button {
+    border-radius: 0 3px 3px 0;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.newsletter-form button:hover {
+    background-color: #222222;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding: 60px 15px;
+}
+
+.footer-col h4 {
+    font-size: 1.1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul a {
+    color: var(--text-gray);
+    font-size: 0.9rem;
+}
+
+.footer-col ul a:hover {
+    color: var(--primary-color);
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: var(--text-gray);
+}
+
+.social-icons a:hover {
+    color: var(--primary-color);
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+@media (max-width: 900px) {
+    .header-container {
+        flex-direction: column;
+    }
+    
+    .search-container {
+        order: 3;
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .bottom-nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 15px 0;
+    }
+    
+    .promo-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .usps-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .hero-content-box h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .usps-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .newsletter-form {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .newsletter-form input {
+        border-radius: 3px;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+    
+    .newsletter-form button {
+        border-radius: 3px;
+        width: 100%;
+    }
+}
